@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register</title>
+	</head>
+	<body>
+		<header>
+			<h1>Register</h1>
+		</header>
+		<nav>
+			<a href="https://dimitramazaraki.com">my website</a>
+		</nav>
+		<br>
+		<form method="GET" action="action.php">
+			First Name: <input type="text" name="firstname"><br>
+			Last Name: <input type="text" name="lastname"><br>
+			Email: <input type="email" name="email" required><br>
+			Password: <input type="password" name="password" min="5" required>
+			Birthday: <input type="date" name="date"><br>
+			Gender: <br>
+			<input type="radio" name="gender" value="male">Male<br>
+			<input type="radio" name="gender" value="female">Female<br>
+			<input type="radio" name="gender" value="other">Other<br>
+			Pets:<br>
+			<input type="checkbox" name="cats">Cats<br>
+			<input type="checkbox" name="dogs">Dogs<br>
+			Cars: <br>
+			<select name="" id="">
+				<option value="volvo" name="volvo">Volvo</option>
+				<option value="fiat" name="fiat">Fiat</option>
+			</select><br>	
+			<input type="submit" value="Register">
+			<input type="reset" value="Reset">
+		</form>
+		<footer>
+			<p>@ DM</p>
+		</footer>
+	</body>
+</html>
