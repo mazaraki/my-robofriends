@@ -1,0 +1,22 @@
+h2 {
+	color: red;
+}
+
+h2 + p {
+	color: #aa4139;
+	text-align: center;
+	border: 5px solid rgba(255, 176, 170, .5);
+	cursor: pointer; 
+}
+p {
+	color: pink;
+	/* text-decoration: line-through; */
+	text-transform: capitalize;
+	line-height: 25px;
+	font-stretch: condensed;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 150%;
+	font-family: 'Courier New', Courier, monospace;
+}
+
