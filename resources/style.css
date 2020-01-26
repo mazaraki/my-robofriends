@@ -1,8 +1,41 @@
+* {
+	margin: 0 auto;
+	font-family: 'Poiret One', cursive;
+}
+/* body{
+	background: url(http://c1.peakpx.com/wallpaper/183/911/690/antennae-galaxies-ngc-4038-ngc-4039-wallpaper-preview.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+} */
+ul li {
+	list-style-type: none;
+	display: inline;
+	/* text-decoration: none !important; */
+	font-weight: bolder;
+	font-size: 1.8rem;
+	padding: 1%;
+}
+
+
+
+ul li a {
+	color: #aa4139;
+	text-decoration: none;
+}
+ul li a:hover {
+	color: #aaa999;
+}
+/* ul li a {
+	color: whitesmoke;
+} */
+
+
+
 h2 {
 	color: red;
 }
 
-h2 + p {
+p {
 	color: #aa4139;
 	text-align: center;
 	border: 5px solid rgba(255, 176, 170, .5);
@@ -17,6 +50,14 @@ p {
 	font-style: italic;
 	font-weight: bold;
 	font-size: 150%;
-	font-family: 'Courier New', Courier, monospace;
+	/* font-family: 'Courier New', Courier, monospace; */
 }
 
+img {
+	float: right;
+}
+
+footer {
+	clear: both;
+	text-align: center;
+}
