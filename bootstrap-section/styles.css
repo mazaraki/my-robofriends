@@ -1,0 +1,12 @@
+.btn-primary[data-target="#exampleModal"] {
+	background-color: orange;
+}
+
+.btn-primary[data-target="#exampleModal"]:hover {
+	background-color: black;
+}
+
+.col {
+	background-color: grey;
+	border: 2px solid black;
+}
