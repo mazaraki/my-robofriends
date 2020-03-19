@@ -25,3 +25,24 @@
 .done {
 	text-decoration: line-through;
 }
+
+ul {
+	width: 20em;
+}
+
+li {
+	max-width: 70%;
+	display: flex;
+}
+
+li > button {
+	margin-left: 20px;
+	
+}
+
+button {
+	border-radius: 45px;
+	background: #85adc2;
+	box-shadow:  5px 5px 10px #7193a5, 
+             -5px -5px 10px #99c7df;
+}
