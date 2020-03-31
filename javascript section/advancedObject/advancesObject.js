@@ -27,9 +27,56 @@ const obj4 = {
 // instantiation
 // when you make a copy of an object and use the code
 // you make instances
+
+// we use 'this', so when we create a player, we can access the name and type property
 class Player {
-	constructor(name, type){
+	constructor(name='boo', type='Rogue'){
+		console.log(this);
 		this.name = name;
 		this.type = type;
 	}
+
+	introduce(){
+		console.log(`Hello world! I am ${this.name} and my type is ${this.type}.`);
+	}
+}
+
+class Wizard extends Player {
+	constructor(name, type){ // everytime we extend, we need to call the constructor function
+		super(name, type); //overrides the Player's class' constructor. now we can have access to the parametres 
+		console.log('wizard', this);
+	}
+
+	play(){
+		console.log(`I am a ${this.type}.`);
+	}
+
+};
+
+
+const wizard1 = new Wizard('Shelly', 'Healer');
+const wizard2 = new Wizard('Edward', 'Full Metal Alchemist');
+const me = new Wizard();
+
+
+// classical (before ES6) inheritance
+var Player = function(name='boo', type='rogue'){
+	this.name = name;
+	this.type = type;
+}
+
+
+Player.prototype.introduce = function(){
+	console.log(`Hi I am ${this.name} and I am a ${this.type}.`);
+}
+
+var wizard1 = new Player('Shelly', 'Healer');
+var wizard2 = new Player('Edward', 'Full Metal Alchemist');
+
+wizard1.play = function(){
+	console.log(`I am a ${this.type}.`);
+}
+
+wizard2.play = function(){
+	console.log(`I am a ${this.type}.`);
 }
