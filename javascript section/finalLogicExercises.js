@@ -7,27 +7,28 @@
 // number types. i.e. [1, "2", "3", 2] should return [[1,2], ["2", "3"]]
 const a1 = [1,2,4,591,392,391,2,5,10,2,1,1,1,20,20];
 function clean(arr){
+
     arr.sort((a, b) => a - b);
-    let my = []; let rar = [];
-    for (let i = 0; i < arr.length - 1; i++) {
-    	if (arr[i] === arr[i+1]) {
-    		my.push(arr[i]);
-    		my.push(arr[i+1]);
-    		console.log(my)
-    	} else {
-    		console.log('-----', arr[i], arr[i+1]);
-    		rar = rar.concat(...my);
-    		console.log(my, rar);
-    		my.length = 0;
+    console.log('arr ', arr);
+    
+    let final = [];
+    for (var i = 0; i < arr.length-1; i++) {
+    	let cur = arr[i], next = arr[i+1], curA = [];//, newA;
+    	if (cur != next) {
+    		console.log(cur, next);
+    		curA = arr.slice(0, i+1);
+    		final.push(curA);
+    		// console.log('final ' , final);
+    		console.log('cura ', curA);
+    		curA.length = 0;
     	}
-    	// rar.concat(my);
-    	// console.log('rar inside ', rar) 
-    	
+    	// final.concat(curA);
+    	curA.length = 0;
     }
-//     console.log('my', my);
-//     console.log('rar', my);
-} //
-// clean(a1);
+
+    var c = arr.slice(0, 5);
+} 
+clean(a1);
 
 // DONE
 // Question 2: Write a javascript function that takes an array of 
@@ -40,22 +41,62 @@ function whenAdded(arr, target){
 			if ((arr[i] + arr[k]) == target) console.log(`[${arr[i]}, ${arr[k]}]`);
 }
 
-whenAdded([1,2,3], 4);
+// whenAdded([1,2,3], 4);
 
 
+// DONE
 // Question 3: Write a function that converts HEX to RGB. Then Make 
 // that function auto-dect the formats so that if you enter HEX color 
 // format it returns RGB and if you enter RGB color format it returns HEX.
 function hexToRgb(color){
+	let c = color.replace('#', '');
+	if (color.length < 6) {
+		alert('please provide a value like this: \'#xxxxxx\'');
+		return;
+	} 
+	let rgb = [];
+	for (let i = 0; i < c.length; i=i+2){
+		rgb.push(c[i] + c[i + 1])
+	}
+	let res = 'rgb(' + rgb.map(item => parseInt(item, 16)) + ')';
+	console.log(res)
+	return res;
 
 }
 
 function rgbToHex(color){
-	console.log( 0, 51, 255)
-	// color()
+	color = color.replace(/ +/g, '');
+	let rgb = color.split(',');
+	let rgbMap = rgb.map(item => {
+		let num = Number(item);
+		let hex = num.toString(16); 
+		return hex.length == 1 ? '0'+hex:hex;
+	});
+	let final = '#' + rgbMap.join('');
+	console.log(final);
+	return final;
+}
+
+function rgbToHex2(color) {
+	color = color.replace(/ +/g, '');
+	let rgb = color.split(',');
+	let res = '#' + (((rgb[0] << 16).toString(16)) + ((rgb[1] << 8).toString(16)) 
+		+ rgb[2].toString(16));
+	let final = res.substring(0, res.length - 2);
+	console.log(final);
+	return final;
 }
 
 function change(value){
-	if(value.contains('#')) hexToRgb(value);
-	else rgbToHex(value);
+	console.log(value)
+	value = String(value);
+	if(value.indexOf(',') < 0) {
+		hexToRgb(value);
+	} else {
+		rgbToHex(value);
+		rgbToHex2(value);
+	}
 }
+
+// change('255, 0, 0');
+// change('#f34500');
