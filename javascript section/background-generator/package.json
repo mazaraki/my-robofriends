@@ -4,8 +4,12 @@
   "description": "",
   "main": "script.js",
   "scripts": {
+    "build": "browserify script.js > bundle.js && live-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dimitra Mazaraki @boo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
 }
