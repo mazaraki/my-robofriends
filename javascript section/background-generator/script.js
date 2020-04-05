@@ -33,4 +33,5 @@ color2.addEventListener('input', setGradient);
 btn.addEventListener('click', function(){
 	color1.value = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 	color2.value = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+	setGradient();
 });
